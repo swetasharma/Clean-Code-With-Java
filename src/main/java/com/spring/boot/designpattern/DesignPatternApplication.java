@@ -5,8 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.IntStream;
 
 @SpringBootApplication
 public class DesignPatternApplication {
@@ -60,5 +64,49 @@ public class DesignPatternApplication {
 
 		final BiFunction<Integer, Integer, Integer> pureTimesFunction = (newNumber, times) -> newNumber * times;
 		System.out.println(pureTimesFunction.apply(9,2));
+
+
+		/**
+		 * Lambda expression has following structure
+		 * (argument1, argument2) -> expression
+		 */
+		final Supplier<String> supplier = new Supplier<String>() {
+			@Override
+			public String get() {
+				return "Hello World";
+			}
+		};
+
+		// achieve same using lambda expression
+		// reducing boiler plate code
+		final Supplier<String> supplier1 = () -> "Hello world";
+
+		final Consumer<String>  consumer = element -> System.out.println("This is next element" + element);
+
+		final Function<String, String> upperCase = word -> word.toUpperCase();
+
+		final Function<String, String> upperCaseUsingMethodReference = String::toUpperCase;
+
+		List<String> elements = List.of("1", "2", "3", "4", "5", "6");
+		final IntStream  intStream = elements.stream()
+				.mapToInt(Integer::valueOf);
+
+		//our stream will not start processing the elements in the array until we call the
+		//terminal operation sum which belong to IntStream interface
+		final int sum = intStream.sum();
+		System.out.println("The sum is " + sum);
+
+		/**
+		 * Popular java stream methods
+		 * filter
+		 * map
+		 * flatMap
+		 * reduce
+		 */
+
+		/**
+		 * Additional features supported
+		 * CompletableFuture
+		 */
 	}
 }
