@@ -2,32 +2,38 @@ package com.spring.boot.designpattern;
 
 import java.util.List;
 
+/**
+ * Immutable classes in java
+ * 1. Removing Setters
+ * 2. Adding all args constructor
+ */
 public class Hobbit {
+
     private String name;
     private Address address;
     private List<String> stuff;
 
-    public String getName() {
-        return name;
+    /**
+     * All args constructor
+     * @param name
+     * @param address
+     * @param stuff
+     */
+    public Hobbit(String name, Address address, List<String> stuff){
+        this.name = name;
+        this.address = address;
+        this.stuff = stuff;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public Address getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     public List<String> getStuff() {
         return stuff;
-    }
-
-    public void setStuff(List<String> stuff) {
-        this.stuff = stuff;
     }
 }
