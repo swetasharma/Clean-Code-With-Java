@@ -27,10 +27,12 @@ public class Person {
             return false;
         }
 
-        /*Person person = (Person) obj;
-        return Objects.equals(this.name, person.name);*/
-
         Person person = (Person) obj;
         return this.idNumber == person.idNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idNumber);
     }
 }
