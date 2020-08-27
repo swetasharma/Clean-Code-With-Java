@@ -81,14 +81,14 @@ public class DesignPatternApplication {
 		// reducing boiler plate code
 		final Supplier<String> supplier1 = () -> "Hello world";
 
-		final Consumer<String>  consumer = element -> System.out.println("This is next element" + element);
+		final Consumer<String> consumer = element -> System.out.println("This is next element" + element);
 
 		final Function<String, String> upperCase = word -> word.toUpperCase();
 
 		final Function<String, String> upperCaseUsingMethodReference = String::toUpperCase;
 
 		List<String> elements = List.of("1", "2", "3", "4", "5", "6");
-		final IntStream  intStream = elements.stream()
+		final IntStream intStream = elements.stream()
 				.mapToInt(Integer::valueOf);
 
 		//our stream will not start processing the elements in the array until we call the
