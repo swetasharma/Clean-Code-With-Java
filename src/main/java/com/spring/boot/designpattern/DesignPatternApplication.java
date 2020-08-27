@@ -1,5 +1,8 @@
 package com.spring.boot.designpattern;
 
+import com.spring.boot.designpattern.enums.Account;
+import com.spring.boot.designpattern.enums.TransactionType;
+import com.spring.boot.designpattern.lambda.LambdaExpressions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -17,6 +20,9 @@ public class DesignPatternApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DesignPatternApplication.class, args);
+		/**
+		 * Enums
+		 */
 		Account accountBuy = new Account();
 		System.out.println("Balance before the transaction: "+ accountBuy.getBalance());
 		TransactionType.BUY.doTransactionOperation(accountBuy, BigDecimal.valueOf(100));
@@ -27,6 +33,9 @@ public class DesignPatternApplication {
 		TransactionType.SELL.doTransactionOperation(accountSell, BigDecimal.valueOf(100));
 		System.out.println("Balance after the transaction: "+ accountSell.getBalance());
 
+		/**
+		 * Streams and Lambda Expressions
+		 */
 		int[] numbers = new int[]{1, 23, 13, 9, 26, 90, 3, 8};
 		final Integer[] greaterThan = LambdaExpressions.filterGreaterThan(10, numbers);
 		System.out.println(Arrays.toString(greaterThan));
@@ -107,6 +116,14 @@ public class DesignPatternApplication {
 		/**
 		 * Additional features supported
 		 * CompletableFuture
+		 */
+
+		/**
+		 * Equals and Hashcode
+		 */
+
+		/**
+		 * Immutability classes in java
 		 */
 	}
 }

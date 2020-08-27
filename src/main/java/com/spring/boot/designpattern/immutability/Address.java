@@ -1,4 +1,4 @@
-package com.spring.boot.designpattern;
+package com.spring.boot.designpattern.immutability;
 
 public class Address {
 

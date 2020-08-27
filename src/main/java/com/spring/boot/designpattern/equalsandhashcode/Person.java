@@ -1,4 +1,4 @@
-package com.spring.boot.designpattern;
+package com.spring.boot.designpattern.equalsandhashcode;
 
 import java.util.Objects;
 

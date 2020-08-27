@@ -1,4 +1,4 @@
-package com.spring.boot.designpattern;
+package com.spring.boot.designpattern.lambda;
 
 import java.util.ArrayList;
 import java.util.List;
