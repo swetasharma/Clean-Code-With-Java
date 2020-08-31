@@ -2,12 +2,16 @@ package com.spring.boot.designpattern;
 
 import com.spring.boot.designpattern.enums.Account;
 import com.spring.boot.designpattern.enums.TransactionType;
+import com.spring.boot.designpattern.immutability.Address;
+import com.spring.boot.designpattern.immutability.Gandalf;
+import com.spring.boot.designpattern.immutability.Hobbit;
 import com.spring.boot.designpattern.lambda.LambdaExpressions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -125,5 +129,14 @@ public class DesignPatternApplication {
 		/**
 		 * Immutability classes in java
 		 */
+
+		Gandalf gandalf = new Gandalf("Frodo Baggins", new Address("Hobitton", "Shire"), Collections.emptyList());
+		Hobbit hobbit = new Hobbit("Sweta", new Address("test","test1"), Collections.emptyList());
+		//Hobbit hobbit = (Hobbit) gandalf;
+		System.out.println(hobbit.getName());
+		gandalf.hackTheImmutability("Mr. Underhill");
+		System.out.println();
+
+		System.out.println(hobbit.getName());
 	}
 }

@@ -6,8 +6,9 @@ import java.util.List;
  * Immutable classes in java
  * 1. Removing Setters
  * 2. Adding all args constructor
+ * 3. Marking class as final to protect it being from extended
  */
-public class Hobbit {
+public final class Hobbit {
 
     private String name;
     private Address address;

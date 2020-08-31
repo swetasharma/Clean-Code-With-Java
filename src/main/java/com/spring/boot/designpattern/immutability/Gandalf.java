@@ -2,7 +2,8 @@ package com.spring.boot.designpattern.immutability;
 
 import java.util.List;
 
-public class Gandalf extends Hobbit{
+//public class Gandalf extends Hobbit{
+public class Gandalf {
     private String hackedName;
     /**
      * All args constructor
@@ -12,7 +13,7 @@ public class Gandalf extends Hobbit{
      * @param stuff
      */
     public Gandalf(String name, Address address, List<String> stuff) {
-        super(name, address, stuff);
+        //super(name, address, stuff);
         hackedName = name;
     }
 
@@ -21,8 +22,8 @@ public class Gandalf extends Hobbit{
         System.out.println("Immutability has been hacked!");
     }
 
-    @Override
+    /*@Override
     public String getName() {
         return hackedName;
-    }
+    }*/
 }
