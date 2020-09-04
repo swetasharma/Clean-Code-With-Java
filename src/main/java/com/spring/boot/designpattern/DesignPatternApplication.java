@@ -1,6 +1,9 @@
 package com.spring.boot.designpattern;
 
 import com.spring.boot.designpattern.dependencyinjection.Consumer1;
+import com.spring.boot.designpattern.dependencyinjection.Consumer2;
+import com.spring.boot.designpattern.dependencyinjection.Producer;
+import com.spring.boot.designpattern.dependencyinjection.Producer2;
 import com.spring.boot.designpattern.enums.Account;
 import com.spring.boot.designpattern.enums.TransactionType;
 import com.spring.boot.designpattern.immutability.Address;
@@ -150,6 +153,15 @@ public class DesignPatternApplication {
 
 		Consumer1 c1 = new Consumer1();
 		c1.purchaseItem();
+
+
+		String purchaseStatus;
+		Producer producer = new Producer2();
+		Consumer2 consumer2 =  new Consumer2(producer);
+
+		purchaseStatus = consumer2.purchaseItem();
+
+		System.out.println(">> Purchase Status: " + purchaseStatus);
 
 	}
 }
