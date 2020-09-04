@@ -2,6 +2,9 @@ package com.spring.boot.designpattern.dependencyinjection;
 
 /**
  * The class Consumer2 is not dependent on specific implementation of Producer2
+ *
+ * Code becomes easier to maintain because Dependency Injection ensures loose coupling
+ * helps in improving readability
  */
 public class Consumer2 implements Consumer{
 
