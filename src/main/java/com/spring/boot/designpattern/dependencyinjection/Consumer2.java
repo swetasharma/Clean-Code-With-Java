@@ -11,6 +11,15 @@ public class Consumer2 implements Consumer{
         this.producer = producer;
     }
 
+    /**
+     * Besides constructor injection, setter injection can also be used to pass
+     * depending instances to dependent instances
+     * @param producer
+     */
+    public void setProducer(Producer producer){
+        this.producer =  producer;
+    }
+
     @Override
     public String purchaseItem() {
         String purchaseStatus;
