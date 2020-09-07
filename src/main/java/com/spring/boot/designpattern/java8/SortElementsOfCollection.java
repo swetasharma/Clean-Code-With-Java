@@ -1,6 +1,7 @@
 package com.spring.boot.designpattern.java8;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -16,13 +17,26 @@ public class SortElementsOfCollection {
         "Robert",
         "Michael"
     };
+
     /**
      * How to sort using an anonymous inner class
      */
+    private static void showInnerClass(String[] nameArray){
+        // Make a copy of the array
+        String[] nameArrayCopy = Arrays.copyOf(nameArray, nameArray.length);
+
+        // sort using an anonynous inner class
+        Arrays.sort(nameArrayCopy, new Comparator<String>() {
+            @Override
+            public int compare(String s, String t) {
+                return s.toLowerCase().compareTo(t.toLowerCase());
+            }
+        });
+    }
+
     /**
      * How to sort using lambda expression
      */
-
     private static void showLambdaExpression(String[] nameArray){
         System.out.println("Show Lambda Expression");
         //Make a copy of the array.
