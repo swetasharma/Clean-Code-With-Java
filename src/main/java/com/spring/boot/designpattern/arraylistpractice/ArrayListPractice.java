@@ -3,6 +3,7 @@ package com.spring.boot.designpattern.arraylistpractice;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
 public class ArrayListPractice {
 
@@ -54,11 +55,19 @@ public class ArrayListPractice {
         copyCars.add("Skyline");
 
         copyCars.forEach(System.out::println);
-        for (String car : copyCars){
+
+        //filter only the porsche cars
+        List<String> selectedCars = copyCars.stream()
+                .filter(car -> car.equals("Porsche"))
+                .collect(Collectors.toList());
+
+        selectedCars.forEach(System.out::println);
+
+        for (String car : copyCars) {
             copyCars.add("Rolls-Royce");
             copyCars.remove(car);
         }
-        
+
         copyCars.forEach(System.out::println);
     }
 }
